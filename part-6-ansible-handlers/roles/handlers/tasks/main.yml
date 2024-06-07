@@ -1,13 +1,18 @@
 ---
-- name: Update apt cache and install Nginx
-  apt:
-    name: nginx
-    state: latest
-    update_cache: yes
-
-- name: index.html copy
-  template: src=index.html dest=/usr/share/nginx/html/index.html
-  notify:
-    - Restart Nginx
+- hosts: samplenode
+  gather_facts: false
+  become: true
+  tasks:
+    - name: Install apache2
+      apt:
+        name: apache2
+        state: present
 
   
+    - name: copying file to index.html
+      template:
+        src: index.html
+        dest: /var/www/html/index.html
+      notify:
+        - start apache2     # handler name
+

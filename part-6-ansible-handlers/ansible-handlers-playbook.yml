@@ -7,8 +7,10 @@
     - handlers
 
   handlers:
-    - name: Restart Nginx
+    - name: start apache2    # "Start httpd" handler block
       service:
-        name: nginx
+        name: apache2
         state: restarted
+    
+
 
