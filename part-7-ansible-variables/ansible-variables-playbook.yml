@@ -75,6 +75,10 @@
     - name: Print the value of register variable
       debug:
         var: apple_price_as_registered_var.stdout
+    
+    - name: Get the value of apple from the nested variable
+      debug:
+        var: fruit_basket[0].fruits[0]
 
     - name: Get the value of apple from the nested variable
       debug:
