@@ -1,7 +1,4 @@
 ---
-- hosts: samplenode
-  gather_facts: false
-  become: true
   tasks:
     - name: Install apache2
       apt:
