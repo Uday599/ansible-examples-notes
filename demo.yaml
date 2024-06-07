@@ -1,18 +1,9 @@
 ---
-- name: installing nginx
-  hosts: all 
+- hosts: all
   become: true
+  gather_facts: false
   tasks:
-    - name: installing nginx
+    - name: installing nginx 
       apt:
         name: nginx
-        state: present
-      notify:
-        - start nginx
-           
-  handlers:
-    - name: start nginx
-      service:
-        name: nginx
-        state: enabled
-        
+        state: present 
