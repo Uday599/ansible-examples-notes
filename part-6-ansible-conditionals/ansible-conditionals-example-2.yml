@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: true
+  tasks:
+    - name: install using yum if OS is Amazon Linux
+      ansible.builtin.yum:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - git
+        - nginx
+      when: ansible_distribution | lower == "amazon"
+
+    - name: install using apt if OS is Ubuntu
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - git
+        - wget
+        - nginx
+      when: 
+        - ansible_distribution == "Ubuntu"
+        - ansible_pkg_mgr == "apt"

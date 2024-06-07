@@ -1,5 +1,5 @@
 ---
-- name: Example Ansible playbook for Handlers
+- name: Example Ansible playbook 
   hosts: all
   become: yes
   remote_user: ubuntu
@@ -18,6 +18,6 @@
       environment:
         MY_TASK_LEVEL_VARIABLE: "Hello World!"
       ansible.builtin.command: "echo $MY_TASK_LEVEL_VARIABLE"
-      
+
     - name: Testing both playbook level as well as environment level vars.
       ansible.builtin.command: "echo $EXAMPLE $MY_TASK_LEVEL_VARIABLE"
