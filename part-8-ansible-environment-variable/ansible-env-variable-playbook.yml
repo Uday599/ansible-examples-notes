@@ -13,7 +13,7 @@
   tasks:
     # Environment variable at Playbook Level
     - name: Environment var at Playbook Level
-      ansible.builtin.command: "echo $EXAMPLE"
+      command: "echo $EXAMPLE"
 
     # Environment variable only for tasks
     - name: Environment var for only task Level
