@@ -41,7 +41,7 @@ Enter the password for the vault
 ansible-vault view group_vars/my_vault.yml 
 ```
 
-### d. Encrypt existing file
+### d. Encrypt existing unencrypted file
 
 ```bash
 ansible-vault encrypt group_vars/plain_text_secret_file.txt 
