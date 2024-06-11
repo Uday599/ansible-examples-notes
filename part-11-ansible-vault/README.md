@@ -48,6 +48,11 @@ ansible-vault encrypt group_vars/plain_text_secret_file.txt
 ```
 Set the password for the vault
 
+### e. to decrypt a encrypted file
+```bash
+ansible-vault decrypt group_vars/plain_text_secret_file.txt
+```
+
 <br/>
 
 ## 2. Run the playbook with vault using `--ask-vault-pass`
