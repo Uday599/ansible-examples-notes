@@ -59,6 +59,20 @@ ansible-vault decrypt group_vars/plain_text_secret_file.txt
 
 ### a. Run the playbook
 ```bash
+---
+- hosts: all
+  become: true
+  vars_file:
+    - group_vars/my_vault.yml
+  tasks:
+    - name: printing my_vaut.yml content
+      debug:
+        msg: {{ my_message }}
+    
+```
+
+
+```bash
 # Vault file - my_vault.yml
 ansible-playbook --inventory inventory/ansible-vault/hosts ansible-vault-playbook.yml -e @group_vars/my_vault.yml --ask-vault-pass
 ```
